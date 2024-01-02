@@ -1,1 +1,1 @@
-console.log(12312)
+import './js/element'
