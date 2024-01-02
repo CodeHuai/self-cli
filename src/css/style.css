@@ -2,4 +2,16 @@
     color: red;
     font-weight: bold;
     font-size: 18px;
+    background-image: url("../images/微信图片_20231225200917.jpg");
+    background-size: contain;
+    width: 200px;
+    height: 200px;
+    margin-bottom: 20px;
+}
+
+.image-bg {
+    background-image: url("../images/微信图片_20231225200917.jpg");
+    background-size: contain;
+    width: 200px;
+    height: 200px;
 }

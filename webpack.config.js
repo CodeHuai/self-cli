@@ -36,6 +36,19 @@ module.exports = {
                     'less-loader',
                 ],
             },
+            {
+                test: /\.(png|jpe?g|gif|svg)$/,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            esModule: false,
+                            name: '[name]_[hash:6].[ext]'
+                        },
+                    }
+                ],
+                type: 'javascript/auto'
+            }
         ],
     }
 }
