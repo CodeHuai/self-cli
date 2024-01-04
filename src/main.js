@@ -11,3 +11,5 @@ import './font/AlimamaAgileVF-Thin.woff'
 
 const app = createApp(App)
 app.mount('#app')
+
+console.log(123123222)
