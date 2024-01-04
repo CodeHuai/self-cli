@@ -1,14 +1,22 @@
 const path = require('path')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const {VueLoaderPlugin} = require('vue-loader/dist/index')
 
 module.exports = {
     mode: 'development',
-    devtool: 'source-map', // 调试代码时候可以好看代码
+    // devtool: 'source-map', // 调试代码时候可以好看代码
     entry: './src/main.js',
     output: {
         path: path.resolve(__dirname, './dist'),
-        filename: "index.js",
+        filename: "js/index.js",
         clean: true,
     },
+    plugins: [
+        new HtmlWebpackPlugin({
+            template: "./index.html"
+        }),
+        new VueLoaderPlugin()
+    ],
     module: {
         rules: [
             {
@@ -94,6 +102,15 @@ module.exports = {
                 generator: {
                     filename: 'font/[name]_[hash:6][ext]'
                 }
+            },
+            // 配置能够解析 vue 文件
+            // 1: 配置 vue-loader
+            // 2：增加 plugin （VueLoaderPlugin）
+            // 3：在 main.js 中也要注意 vue 文件的 导入写法
+            {
+                // 处理 .vue 文件
+                test: /\.vue$/,
+                loader: "vue-loader",
             }
         ],
     }
